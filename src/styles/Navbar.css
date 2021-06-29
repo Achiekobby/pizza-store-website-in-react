@@ -1,0 +1,154 @@
+.navbar {
+  width: 100vw;
+  height: 100px;
+  background-color: #121619;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 3rem;
+  padding: 0.5rem 1.2rem;
+  height: 80px;
+  width: 100%;
+}
+
+.navbar .leftSide {
+  height: 100%;
+  display: flex;
+  justify-self: center;
+  width: 150px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar .leftSide img {
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+.navbar .rightSide {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .rightSide .nav-items {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  padding: 0.2rem 1.2rem;
+  flex: 1;
+}
+
+.nav-link-item {
+  list-style: none;
+  margin-right: 2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.nav-link-item::after {
+  content: "";
+  width: 0%;
+  height: 3px;
+  display: block;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #fff;
+  margin: auto;
+  transition: all 0.5s ease-in;
+}
+
+.nav-link-item:hover::after {
+  width: 100%;
+}
+
+.nav-link-item:hover {
+  text-shadow: 0 0 20px #fff;
+  transform: scale(1);
+}
+
+/* Styling for the mobile menu button */
+.mobile-menu {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.2rem;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  box-shadow: 0 7px 7px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease-in;
+  color: #fff;
+}
+
+.mobile-menu:hover {
+  transform: translateY(-5px);
+  background: #fff;
+  color: #121619;
+}
+
+i:hover {
+  color: #121619;
+}
+
+.fas {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.mobile-menu {
+  display: none;
+}
+/* end of styling of the mobile menu button */
+
+@media screen and (max-width: 960px) {
+  .mobile-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    z-index: 999;
+  }
+  .navbar .rightSide {
+    position: absolute;
+    background: rgba(5, 5, 5, .95);
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    transition: all 0.5s ease;
+  }
+
+  .navbar-container .rightSide.active {
+    right: 0;
+  }
+  .nav-items {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .nav-items .nav-link-item {
+    border: 2px solid #fff;
+    padding: 0.5rem 3.5rem;
+    border-radius: 5px;
+  }
+  .nav-items .nav-link-item .nav-link:hover {
+    color: #121619;
+  }
+}
